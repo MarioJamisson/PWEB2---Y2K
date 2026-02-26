@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Y2K | Gestão de Participantes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="retro-container">
+        <header class="cyber-header">
+            <marquee scrollamount="3" class="tech-marquee">*** BEM-VINDO AO SISTEMA DE GESTÃO V1.0 *** REGISTE OS SEUS PARTICIPANTES ***</marquee>
+            <h1><span class="pixel-icon">💾</span> Gestão de Participantes</h1>
+            
+            <fieldset class="theme-switcher win98-box" style="margin-top: 15px; display: inline-block; text-align: left; padding: 10px;">
+                <legend style="font-weight: bold; background: var(--win-gray); padding: 0 5px; border: 1px inset var(--box-border-dark);">📺 Opções de Vídeo</legend>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <label><input type="radio" name="theme" value="light" checked> Padrão Y2K</label>
+                    <label><input type="radio" name="theme" value="dark"> Modo Hacker</label>
+                    <label><input type="radio" name="theme" value="colorblind"> Modo Acessível</label>
+                </div>
+            </fieldset>
+
+            <div class="digital-readout" style="margin-top: 15px;">
+                <p id="dataHoraContainer">A carregar sistema...</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="win98-box form-section">
+                <div class="box-header">
+                    <span class="win-icon">📝</span> Novo Registo
+                </div>
+                <div class="box-content">
+                    <form id="cadastroForm" action="/salvar-endpoint" method="POST">
+                        
+                        <div class="form-group">
+                            <label for="nome">Nome Completo:</label>
+                            <input type="text" id="nome" name="nome" required class="retro-input" placeholder="Digite o nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required class="retro-input" placeholder="utilizador@provedor.pt">
+                        </div>
+
+                        <div class="form-group checkbox-group retro-checkbox-container">
+                            <input type="checkbox" id="presenca" name="presenca" value="sim">
+                            <label for="presenca">Presença confirmada</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipoIngresso">Tipo de Ingresso:</label>
+                            <select id="tipoIngresso" name="tipoIngresso" required class="retro-input retro-select">
+                                <option value="padrao">Padrão (Standard)</option>
+                                <option value="vip">VIP (Gold Access)</option>
+                                <option value="convidado">Convidado (Guest)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group checkbox-group retro-checkbox-container box-highlight">
+                            <input type="checkbox" id="novidades" name="novidades" value="sim">
+                            <label for="novidades">Deseja receber novidades via cyber-mail?</label>
+                        </div>
+
+                        <div id="containerAssuntos" aria-live="polite"></div>
+
+                        <button type="submit" id="btnSubmitForm" class="btn-retro start-button">💾 REGISTAR PARTICIPANTE</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="win98-box lista-section">
+                <div class="box-header">
+                    <span class="win-icon">📂</span> Base de Dados de Participantes
+                </div>
+                <div class="box-content">
+                    <div id="listaParticipantes" class="grid-participantes">
+                        <p class="empty-state">Nenhum dado encontrado no sistema...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="cyber-footer">
+            <p>Best viewed at 800x600 resolution.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

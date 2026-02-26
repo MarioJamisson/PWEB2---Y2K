@@ -1,0 +1,214 @@
+/* --- TEMA PADRÃO (Y2K Original) --- */
+:root, [data-theme="light"] {
+    --win-gray: #c0c0c0;
+    --win-dark-gray: #808080;
+    --win-blue: #000080;
+    --cyber-lime: #39ff14;
+    --electric-blue: #00ffff;
+    --retro-bg: #000033;
+    --text-color: #000;
+    --text-header: var(--electric-blue);
+    --vip-gold: #ffcc00;
+    --convidado-purple: #ff00ff;
+    --box-border-light: white;
+    --box-border-dark: #808080;
+    --btn-delete-bg: #ff0000;
+    --bg-pattern: linear-gradient(45deg, #000033 25%, #000066 25%, #000066 50%, #000033 50%, #000033 75%, #000066 75%, #000066 100%);
+}
+
+/* --- TEMA ESCURO (Hacker) --- */
+[data-theme="dark"] {
+    --win-gray: #111111;
+    --win-dark-gray: #333333;
+    --win-blue: #002200;
+    --cyber-lime: #00ff00;
+    --electric-blue: #00ff00;
+    --retro-bg: #000000;
+    --text-color: #00ff00;
+    --text-header: #00ff00;
+    --vip-gold: #b8860b;
+    --convidado-purple: #8a2be2;
+    --box-border-light: #444444;
+    --box-border-dark: #000000;
+    --btn-delete-bg: #8b0000;
+    --bg-pattern: none;
+}
+
+/* --- TEMA ACESSÍVEL (Daltonismo) --- */
+[data-theme="colorblind"] {
+    --win-gray: #ffffff;
+    --win-dark-gray: #555555;
+    --win-blue: #0055ff;
+    --cyber-lime: #0055ff;
+    --electric-blue: #000000;
+    --retro-bg: #f0f0f0;
+    --text-color: #000000;
+    --text-header: #ffffff;
+    --vip-gold: #ffaa00;
+    --convidado-purple: #0055ff;
+    --box-border-light: #dddddd;
+    --box-border-dark: #222222;
+    --btn-delete-bg: #ffaa00;
+    --bg-pattern: none;
+}
+
+/* --- Resets e Base --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--retro-bg);
+    background-image: var(--bg-pattern);
+    background-size: 20px 20px;
+    color: var(--text-color);
+    padding: 10px;
+    line-height: 1.4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.retro-container { max-width: 1024px; margin: 0 auto; }
+
+/* --- Header --- */
+.cyber-header {
+    text-align: center; margin-bottom: 1.5rem;
+    border: 3px solid var(--electric-blue); background: #000;
+    color: var(--electric-blue); padding: 5px;
+    box-shadow: 0 0 10px var(--electric-blue);
+}
+
+.tech-marquee {
+    background-color: var(--win-blue); color: white;
+    font-weight: bold; border-bottom: 2px solid var(--win-dark-gray);
+    margin-bottom: 10px; padding: 2px;
+}
+
+.cyber-header h1 {
+    font-family: "Courier New", monospace; text-transform: uppercase;
+    letter-spacing: 2px; margin: 10px 0; color: var(--text-header);
+    text-shadow: 1px 1px var(--box-border-dark);
+}
+
+.digital-readout {
+    background-color: #000; border: 3px inset var(--win-dark-gray);
+    display: inline-block; padding: 5px 15px;
+}
+
+.digital-readout p {
+    color: var(--cyber-lime); font-family: "Courier New", monospace;
+    font-weight: bold;
+}
+
+/* --- Mobile First Layout --- */
+main { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.win98-box {
+    background-color: var(--win-gray);
+    border-top: 3px solid var(--box-border-light);
+    border-left: 3px solid var(--box-border-light);
+    border-right: 3px solid var(--box-border-dark);
+    border-bottom: 3px solid var(--box-border-dark);
+    color: var(--text-color);
+}
+
+.box-header {
+    background: linear-gradient(to right, var(--win-blue), #1084d0);
+    color: white; padding: 5px 10px; font-weight: bold;
+    display: flex; align-items: center; border-bottom: 2px solid var(--box-border-dark);
+}
+
+.win-icon { margin-right: 8px; }
+.box-content { padding: 15px; }
+
+/* --- Formulários --- */
+.form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
+.form-group label { font-weight: bold; margin-bottom: 4px; font-size: 0.9rem; }
+
+.retro-input, .retro-select {
+    padding: 6px; background-color: #fff; color: #000;
+    border-top: 3px solid var(--box-border-dark);
+    border-left: 3px solid var(--box-border-dark);
+    border-right: 3px solid var(--box-border-light);
+    border-bottom: 3px solid var(--box-border-light);
+    font-family: "Courier New", monospace; font-size: 1rem;
+}
+
+.retro-input:focus { outline: 2px dashed var(--win-blue); background-color: #ffffcc; }
+
+.checkbox-group {
+    flex-direction: row; align-items: center; gap: 8px;
+    background-color: rgba(255,255,255,0.2); padding: 5px;
+    border: 2px inset var(--box-border-light);
+}
+
+.box-highlight { border: 2px dotted var(--win-blue); background-color: rgba(0, 85, 255, 0.1); }
+
+.btn-retro {
+    width: 100%; padding: 10px; background-color: var(--win-gray);
+    color: var(--text-color); font-weight: bold; cursor: pointer;
+    font-family: Tahoma, sans-serif; text-transform: uppercase;
+    border-top: 3px solid var(--box-border-light);
+    border-left: 3px solid var(--box-border-light);
+    border-right: 3px solid var(--box-border-dark);
+    border-bottom: 3px solid var(--box-border-dark);
+}
+
+.btn-retro:active {
+    border-top: 3px solid var(--box-border-dark);
+    border-left: 3px solid var(--box-border-dark);
+    border-right: 3px solid var(--box-border-light);
+    border-bottom: 3px solid var(--box-border-light);
+    padding-top: 12px; padding-bottom: 8px;
+}
+
+#campoInteresseExtra {
+    background-color: var(--cyber-lime); color: #000; padding: 10px;
+    border: 3px dashed #000; margin-bottom: 15px;
+}
+
+/* --- Lista de Participantes --- */
+.empty-state { font-style: italic; text-align: center; }
+
+.participante-card {
+    background: #fff; border: 3px solid #000; color: #000;
+    margin-bottom: 1rem; font-family: "Courier New", monospace;
+}
+
+.card-header-tech {
+    background: #000; color: var(--cyber-lime); padding: 5px;
+    font-weight: bold; border-bottom: 2px solid var(--cyber-lime);
+}
+
+.card-body-tech { padding: 10px; }
+.card-body-tech p { margin-bottom: 5px; border-bottom: 1px dotted #ccc; }
+
+.participante-card.vip { border-color: var(--vip-gold); background: #ffffcc; }
+.participante-card.vip .card-header-tech { background: var(--vip-gold); color: #000; border-bottom-color: #000; }
+
+.participante-card.convidado { border-color: var(--convidado-purple); background: #ffe6ff; }
+.participante-card.convidado .card-header-tech { background: var(--convidado-purple); color: #fff; }
+
+.btn-delete-retro {
+    background: var(--btn-delete-bg); color: white; cursor: pointer;
+    border: 2px outset #fff; padding: 4px 8px; font-weight: bold; margin-top: 10px;
+}
+.btn-delete-retro:active { border-style: inset; }
+
+.btn-edit-retro {
+    background: var(--win-blue); color: white; cursor: pointer;
+    border: 2px outset #fff; padding: 4px 8px; font-weight: bold; margin-top: 10px;
+    margin-right: 5px;
+}
+.btn-edit-retro:active { border-style: inset; }
+
+.cyber-footer { text-align: center; font-size: 0.8rem; margin-top: 2rem; font-family: "Courier New", monospace; color: var(--text-color); }
+
+/* --- Responsividade (Tablets e Desktops) --- */
+@media (min-width: 768px) {
+    body { padding: 20px; }
+    main { flex-direction: row; align-items: flex-start; }
+    .form-section { flex: 1; }
+    .lista-section { flex: 2; }
+    .grid-participantes {
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px;
+    }
+}
