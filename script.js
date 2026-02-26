@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
 function atualizarDataHora() {
     const container = document.getElementById('dataHoraContainer');
     const agora = new Date();
-    container.innerText = `SERVER TIME: ${agora.toLocaleTimeString('pt-PT')} | DATE: ${agora.toLocaleDateString('pt-PT')}`;
+    container.innerText = `HORARIO: ${agora.toLocaleTimeString('pt-PT')} | DATA: ${agora.toLocaleDateString('pt-PT')}`;
 }
 
 // --- 3. ESTADO DA APLICAÇÃO (INTEGRADO AO LOCALSTORAGE) ---
